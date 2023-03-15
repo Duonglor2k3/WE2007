@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Title</title>
+	<!-- Required meta tags -->
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+	<!-- Bootstrap CSS v5.2.1 -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
+	<script src="/lap4//lib/angular.min.js"></script>
+</head>
+
+<body ng-app="myApp">
+	<div class="container" ng-controller="myCtrl">
+		<div class="row">
+			<div class="col-sm-4 offset-sm-4">
+				<form>
+					<div class="form-group">
+						<label>Họ và tên</label>
+						<input id="" class="form-control" type="text" name="" ng-model="student.name"
+							placeholder="Nhập họ và tên" />
+					</div>
+					<!-- Ngày sinh -->
+					<div class="form-group">
+						<label>Ngày sinh</label>
+						<input id="" class="form-control" type="date" name="" ng-model="student.ngaysinh" />
+					</div>
+					<!-- Giới tính -->
+					<div class="form-group">
+						<label>Giới tính</label>
+						<select id="" class="form-control" name="" ng-model="student.gioitinh">
+							<option value="">Chọn giới tính</option>
+							<option value="Nam">Nam</option>
+							<option value="Nữ">Nữ</option>
+						</select>
+					</div>
+					<!-- Điểm -->
+					<div class="form-group">
+						<label>Điểm</label>
+						<input id="" class="form-control" type="number" name="" ng-model="student.diem" max="10" min="0" />
+					</div>
+					<!-- Học lực -->
+					<div class="form-group">
+						<label>Học lực</label>
+						<label ng-bind="student.hocLuc" class="form-control bg-info	"></label>
+					</div>
+					<hr>
+					<!-- button Grade -->
+					<div class="form-group">
+						<button class="btn btn-primary" ng-click="Grade()">Grade</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script>
+		var myApp = angular.module('myApp', []);
+		myApp.controller('myCtrl', function ($scope) {
+			$scope.student = {};
+			$scope.Grade = function () {
+				var diem = parseFloat($scope.student.diem);
+				if (diem >= 5) {
+					$scope.student.hocLuc = "Đậu";
+				} else if (diem >= 0 && diem < 5) {
+					$scope.student.hocLuc = "Trượt";
+				} else {
+					$scope.student.hocLuc = "Vui Lòng Nhập Lại !!";
+				}
+			}
+		})
+	</script>
+	<!-- Bootstrap JavaScript Libraries -->
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+		integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+		crossorigin="anonymous"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+		integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>

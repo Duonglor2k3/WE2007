@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>bai4</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <script src="./lib/angular.min.js"></script>
+  </head>
+
+  <body ng-app="myApp">
+    <div class="container fw-semibold" ng-controller="calCtl">
+      <div class="row">
+        <div class="col-sm-4 offset-sm-4">
+          <form>
+            <div class="form-group">
+              <label>Chiều dài</label>
+              <input
+                id=""
+                class="form-control"
+                type="number"
+                name=""
+                ng-model="chieudai"
+								min="0"
+              />
+            </div>
+            <div class="form-group">
+              <label>Chiều rộng</label>
+              <input
+                id=""
+                class="form-control"
+                type="number"
+                name=""
+                ng-model="chieurong"
+								min="0"
+              />
+            </div>
+            <div class="form-group">
+              <label for="">Diện Tích</label>
+              <label ng-bind="dienTich" class="form-control"></label>
+            </div>
+            <div class="form-group">
+              <label>Chu Vi</label>
+              <label ng-bind="chuVi" class="form-control"></label>
+            </div>
+            <hr />
+            <div class="form-group">
+              <button class="btn btn-primary" ng-click="tinhDienTich()">
+                Tính
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+		<script>
+			var app = angular.module("myApp", []);
+			app.controller("calCtl", function ($scope) {
+				$scope.tinhDienTich = function () {
+					var a = parseFloat($scope.chieudai);
+					var b = parseFloat($scope.chieurong);
+					$scope.dienTich = a * b;
+					$scope.chuVi = (a + b) * 2;
+				}
+			})
+		</script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+      integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
