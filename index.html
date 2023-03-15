@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <script src="/angular.min.js"></script>
+  </head>
+  <body ng-app="myApp">
+    <!-- định nghịa nơi controller render data -->
+    <div ng-controller="myCtrl"></div>
+    <!-- Định nghĩa nơi controller render data name = infoCtrl  -->
+    <div ng-controller="infoCtrl">
+      <table class="table table-light">
+        <thead>
+          <tr>
+            <td>Name</td>
+            <td>Age</td>
+            <td>Phone</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="data in objInfo">
+            <td>{{ data.name }}</td>
+            <td>{{ data.age }}</td>
+            <td>{{ data.phone }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <script>
+      function myFunction($scope) {
+        // xử lý việc render data ra khu vuc myCtrl
+        $scope.welcome = "hello world"; // sau dấu chấm của $scope sẽ là biến mình khai báo để render dữ liệu lên
+      }
+      function infoCtrl($scope) {
+        // $scope.name = "Nguyen Van A";
+        // $scope.age = 19;
+        // $scope.phone = "0987654321";
+        $scope.objInfo = [
+          {
+            name: "Nguyen Van A",
+            age: 19,
+            phone: "0987654321",
+          },
+          {
+            name: "Nguyen Van B",
+            age: 20,
+            phone: "0987654321",
+          },
+        ];
+      }
+      // Khởi tạo AngularJS
+      var app = angular.module("myApp", []);
+      // map myCtrl với hàm myFunction để render data
+      app.controller("myCtrl", myFunction);
+      // map infoCtrl với hàm infoCtrl để render data
+      app.controller("infoCtrl", infoCtrl);
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+      integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
