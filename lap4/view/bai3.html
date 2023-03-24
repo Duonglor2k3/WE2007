@@ -1,0 +1,22 @@
+<div class="container">
+	<table class="table table-light">
+		<thead>
+			<tr class="fw-semibold">
+				<td class="text-center">Hình</td>
+				<td>Họ và Tên</td>
+				<td>Ngày Sinh</td>
+				<td>Giới Tính</td>
+				<td>Điểm</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="data in students">
+				<td class="text-center"><img src="img/{{data.photo}}" alt="" width="100"></td>
+				<td>{{data.fullName}}</td>
+				<td>{{data.birthday}}</td>
+				<td>{{data.gender}}</td>
+				<td>{{data.mark}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

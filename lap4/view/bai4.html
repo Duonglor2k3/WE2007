@@ -1,0 +1,31 @@
+
+	<div class="container fw-semibold" >
+		<div class="row">
+			<div class="col-sm-4 offset-sm-4">
+				<form>
+					<div class="form-group">
+						<label>Chiều dài</label>
+						<input id="" class="form-control" type="number" name="" ng-model="chieudai" min="0" />
+					</div>
+					<div class="form-group">
+						<label>Chiều rộng</label>
+						<input id="" class="form-control" type="number" name="" ng-model="chieurong" min="0" />
+					</div>
+					<div class="form-group">
+						<label for="">Diện Tích</label>
+						<label ng-bind="dienTich" class="form-control"></label>
+					</div>
+					<div class="form-group">
+						<label>Chu Vi</label>
+						<label ng-bind="chuVi" class="form-control"></label>
+					</div>
+					<hr />
+					<div class="form-group">
+						<button class="btn btn-primary" ng-click="tinhDienTich()">
+							Tính
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>

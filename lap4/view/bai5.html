@@ -1,0 +1,41 @@
+<div class="container">
+	<div class="row">
+		<div class="col-sm-4 offset-sm-4">
+			<form>
+				<div class="form-group">
+					<label>Họ và tên</label>
+					<input id="" class="form-control" type="text" name="" ng-model="student.name" placeholder="Nhập họ và tên" />
+				</div>
+				<!-- Ngày sinh -->
+				<div class="form-group">
+					<label>Ngày sinh</label>
+					<input id="" class="form-control" type="date" name="" ng-model="student.ngaysinh" />
+				</div>
+				<!-- Giới tính -->
+				<div class="form-group">
+					<label>Giới tính</label>
+					<select id="" class="form-control" name="" ng-model="student.gioitinh">
+						<option value="">Chọn giới tính</option>
+						<option value="Nam">Nam</option>
+						<option value="Nữ">Nữ</option>
+					</select>
+				</div>
+				<!-- Điểm -->
+				<div class="form-group">
+					<label>Điểm</label>
+					<input id="" class="form-control" type="number" name="" ng-model="student.diem" max="10" min="0" />
+				</div>
+				<!-- Học lực -->
+				<div class="form-group">
+					<label>Học lực</label>
+					<label ng-bind="student.hocLuc" class="form-control bg-info	"></label>
+				</div>
+				<hr>
+				<!-- button Grade -->
+				<div class="form-group">
+					<button class="btn btn-primary" ng-click="Grade()">Grade</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
