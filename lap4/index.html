@@ -12,25 +12,31 @@
 		integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 	<script src="libs/angular.min.js"></script>
 	<script src="libs/angular-route.min.js"></script>
-	<script src="controllers/bai1Controller.js"></script>
+	<!-- <script src="controllers/bai1Controller.js"></script>
 	<script src="controllers/bai2Controller.js"></script>
 	<script src="controllers/bai3Controller.js"></script>
 	<script src="controllers/bai4Controller.js"></script>
-	<script src="controllers/bai5Controller.js"></script>
-	<script src="controllers/gioiThieuController.js"></script>
+	<script src="controllers/bai5Controller.js"></script> -->
+	<!-- <script src="controllers/gioiThieuController.js"></script> -->
+	<script src="controllers/baiTapController.js"></script>
 </head>
 
 <body ng-app="myApp">
 	<header>
 		<!-- place navbar here -->
-		<h1 class="text-center">Lap 04</h1>
+		<h1 class="text-center"><img
+				src="data:image/jpeg;base64,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"
+				alt=""></h1>
 		<nav class="nav justify-content-center  ">
-			<a class="nav-link active" href="#!/bai1" aria-current="page">Bài 1</a>
+			<!-- <a class="nav-link active" href="#!/bai1" aria-current="page">Bài 1</a>
 			<a class="nav-link active" href="#!/bai2" aria-current="page">Bài 2</a>
 			<a class="nav-link active" href="#!/bai3" aria-current="page">Bài 3</a>
 			<a class="nav-link active" href="#!/bai4" aria-current="page">Bài 4</a>
 			<a class="nav-link active" href="#!/bai5" aria-current="page">Bài 5</a>
-			<a class="nav-link active" href="#!/gioiThieu/:abc" aria-current="page">Giới thiệu</a>
+			<a class="nav-link active" href="#!/gioiThieu/:abc" aria-current="page">Giới thiệu</a> -->
+			<a class="nav-link active" href="#!/baiTap/Nhân Viên" aria-current="page">Nhân Viên</a>
+			<a class="nav-link active" href="#!/baiTap/Cán Bộ" aria-current="page">Cán Bộ</a>
+			<a class="nav-link active" href="#!/baiTap/Quản Lý" aria-current="page">Quản Lý</a>
 		</nav>
 	</header>
 	<main>
@@ -51,30 +57,10 @@
 </body>
 <script>
 	angular.module("myApp", ['ngRoute']).config(function ($routeProvider) {
-		$routeProvider.when("/bai1", {
-			templateUrl: "view/bai1.html",
-			controller: bai1Controller
+		$routeProvider.when("/baiTap/:name", {
+			templateUrl: "view/baiTap.html",
+			controller: baiTapController
 		})
-			.when("/bai2", {
-				templateUrl: "view/bai2.html",
-				controller: bai2Controller
-			})
-			.when("/bai3", {
-				templateUrl: "view/bai3.html",
-				controller: bai3Controller
-			})
-			.when("/bai4", {
-				templateUrl: "view/bai4.html",
-				controller: bai4Controller
-			})
-			.when("/bai5", {
-				templateUrl: "view/bai5.html",
-				controller: bai5Controller
-			})
-			.when("/gioiThieu/:name", {
-				templateUrl: "view/gioiThieu.html",
-				controller: gioiThieuController
-			})
 	})
 </script>
 

@@ -1,0 +1,58 @@
+<div class="row justify-content-center ">
+	<div class="col-md-6 mb-3 border ">
+		<form>
+			<h2 class="my-3">Thông Tin Bảo hiểm Fpoly : {{chucVu}}</h2>
+			<div class="form-group mb-3">
+				<label>Họ Tên</label>
+				<input type="text" class="form-control" name="name" ng-model="user.name" placeholder="Nhập họ tên">
+			</div>
+			<div ng-if="kiemtradulieu.name==false" class="alert alert-danger">
+				Vui lòng Nhập Tên
+			</div>
+			<div class="form-group mb-3">
+				<!-- gender radio ng-model -->
+				<label>Giới Tính</label>
+				<div class="form-check">
+					<label class="form-check-label">
+						<input type="radio" class="form-check-input" name="gender" value="Nam" ng-model="user.gender">
+						Nam
+					</label>
+				</div>
+				<div class="form-check">
+					<label class="form-check-label">
+						<input type="radio" class="form-check-input" name="gender" value="Nữ" ng-model="user.gender">
+						Nữ
+					</label>
+				</div>
+			</div>
+			<div ng-if="kiemtradulieu.gender==false" class="alert alert-danger">
+				Vui lòng chọn giới tính
+			</div>
+			<div class="form-group mb-3">
+				<label>Bậc</label>
+				<select class="form-control" name="bac" ng-model="user.bac">
+					<option value="">Chọn bậc</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+				</select>
+			</div>
+			<div ng-if="kiemtradulieu.bac==false" class="alert alert-danger">
+				Vui lòng chọn bậc
+			</div>
+			<div class="form-group mb-3">
+				<label>Số ngày làm</label>
+				<input type="number" class="form-control" name="ngaylam" ng-model="user.ngaylam" placeholder="Nhập số ngày làm">
+			</div>
+			<div ng-if="kiemtradulieu.ngaylam==false" class="alert alert-danger">
+				{{loiNgayLam}}
+			</div>
+			<div class="text-center mb-3">
+				<button type="submit" class="btn btn-primary" ng-click="submit()">Kiểm Tra</button>
+			</div>
+		</form>
+		<div class="alert alert-primary" role="alert">
+			<h4 class="alert-heading">Thông Tin</h4>
+			<p>{{hienThi}}</p>
+		</div>
+	</div>

@@ -9,5 +9,6 @@ window.bai5Controller = function ($scope) {
     } else {
       $scope.student.hocLuc = "Vui Lòng Nhập Lại !!";
     }
+		// 1 biến chứa các dữ liệu trên để hiển thị
   };
 };
